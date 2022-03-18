@@ -1,4 +1,4 @@
-import { BookCollection } from "./BookCollection";
+import { BookCollection } from "./bookCollection";
 
 export interface User {
   id: string;
