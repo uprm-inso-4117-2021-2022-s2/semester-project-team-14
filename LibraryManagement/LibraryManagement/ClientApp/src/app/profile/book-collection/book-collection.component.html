@@ -1,1 +1,38 @@
-<p>book-collection works!</p>
+<mat-card>
+  <mat-card-title>Book Collection</mat-card-title>
+  <mat-card-content>
+    <mat-grid-list cols="3" rowHeight="200px">
+      <mat-grid-tile>
+        <mat-card>
+          <mat-card-title>Currenty Borrowed</mat-card-title>
+          <mat-grid-list cols="2" rowHeight="100px">
+            <mat-grid-tile *ngFor="let book of collection.currentlyBorrowed">
+              <mat-grid-tile-header>{{book.name}}</mat-grid-tile-header>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card>
+          <mat-card-title>Wishlist</mat-card-title>
+          <mat-grid-list cols="2" rowHeight="100px">
+            <mat-grid-tile *ngFor="let book of collection.wishlist">
+              <mat-grid-tile-header>{{book.name}}</mat-grid-tile-header>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card>
+          <mat-card-title>Returned</mat-card-title>
+          <mat-grid-list cols="2" rowHeight="100px">
+            <mat-grid-tile *ngFor="let book of collection.returned">
+              <mat-grid-tile-header>{{book.name}}</mat-grid-tile-header>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>
+

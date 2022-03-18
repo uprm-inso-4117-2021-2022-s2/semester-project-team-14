@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -32,6 +32,7 @@ import { BookCollectionComponent } from './profile/book-collection/book-collecti
     HttpClientModule,
     FormsModule,
     MatCardModule,
+    MatGridListModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'profile', component: ProfileComponent },
