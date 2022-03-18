@@ -5,6 +5,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +18,7 @@ import { HelpComponent } from './help/help.component';
 import { SearchComponent } from './search/search.component';
 import { AboutComponent } from './about/about.component';
 import { BookCollectionComponent } from './profile/book-collection/book-collection.component';
+import { BookItemComponent } from './profile/book-collection/book-item/book-item.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +30,18 @@ import { BookCollectionComponent } from './profile/book-collection/book-collecti
     HelpComponent,
     SearchComponent,
     AboutComponent,
-    BookCollectionComponent
+    BookCollectionComponent,
+    BookItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     MatCardModule,
     MatGridListModule,
+    MatTableModule,
+    MatTabsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'profile', component: ProfileComponent },

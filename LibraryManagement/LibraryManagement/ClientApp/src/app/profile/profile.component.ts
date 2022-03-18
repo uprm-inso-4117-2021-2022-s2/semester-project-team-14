@@ -7,7 +7,7 @@ import { User } from '../interfaces/user';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
 
@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
   mockBookCollection: BookCollection = {
     currentlyBorrowed: [{
       id: "01",
-      name: "BookName01",
+      title: "BookName01",
       author: "AuthorName01",
       isbn: "x-xxxxxxx-x-X",
       status: "borrowed",
@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
     },
     {
       id: "02",
-      name: "BookName02",
+      title: "BookName02",
       author: "AuthorName02",
       isbn: "x-xxxxxxx-x-X",
       status: "borrowed",
@@ -43,7 +43,7 @@ export class ProfileComponent implements OnInit {
     }    ],
     wishlist: [{
       id: "03",
-      name: "BookName03",
+      title: "BookName03",
       author: "AuthorName03",
       isbn: "x-xxxxxxx-x-X",
       status: "available",
@@ -53,7 +53,7 @@ export class ProfileComponent implements OnInit {
     }],
     returned: [{
       id: "04",
-      name: "BookName04",
+      title: "BookName04",
       author: "AuthorName04",
       isbn: "x-xxxxxxx-x-X",
       status: "borrowed",
@@ -63,7 +63,7 @@ export class ProfileComponent implements OnInit {
     },
       {
       id: "05",
-      name: "BookName05",
+      title: "BookName05",
       author: "AuthorName05",
       isbn: "x-xxxxxxx-x-X",
       status: "borrowed",
@@ -73,7 +73,7 @@ export class ProfileComponent implements OnInit {
       },
       {
       id: "06",
-      name: "BookName06",
+      title: "BookName06",
       author: "AuthorName06",
       isbn: "x-xxxxxxx-x-X",
       status: "borrowed",

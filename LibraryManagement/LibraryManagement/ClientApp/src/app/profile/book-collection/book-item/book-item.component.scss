@@ -1,18 +1,17 @@
 @use '@angular/material' as mat;
 @import "~@angular/material/theming";
-@import '../../../../src/styles.scss';
+@import '../../../../styles.scss';
 
 $primary: map-get($my-app-theme, primary);
 $accent: map-get($my-app-theme, accent);
 $warn: map-get($my-app-theme, warn);
-
 
 .primary-color {
   background: mat-color($primary);
 }
 
 .accent-color {
-  color: mat-color($accent);
+  background: mat-color($accent);
 }
 
 .warn-color {
