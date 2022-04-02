@@ -1,7 +1,7 @@
 import { InterlibraryLoan } from "./interlibraryLoan";
 
 export interface BookCopy {
-  id: string;
+  id: number;
   title: string;
   author: string;
   isbn: string;

@@ -1,7 +1,7 @@
-import { BookCopy } from "./bookCopy";
 
 export interface BookCollection {
-  currentlyBorrowed: BookCopy[];
-  wishlist: BookCopy[];
-  returned: BookCopy[];
+  id: any;
+  currently_borrowed: any;
+  wishlist: any;
+  returned: any;
 }

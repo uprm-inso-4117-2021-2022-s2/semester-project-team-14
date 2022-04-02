@@ -2,9 +2,10 @@ import { BookCopy } from "./bookCopy";
 import { User } from "./user";
 
 export interface InterlibraryLoan {
-  bookId: string;
+  id: number;
+  bookId: number;
   borrowedDate: Date;
   returnDate: Date;
   returned: boolean;
-  borrowerId: string;
+  borrowerId: number;
 }

@@ -3,17 +3,17 @@
   <mat-card-content>
     <mat-tab-group>
       <mat-tab label="Currenty Borrowed">
-        <div *ngFor="let book of collection.currentlyBorrowed">
+        <div *ngFor="let book of currentlyBorrowed">
           <app-book-item [book]="book"></app-book-item>
         </div>
       </mat-tab>
       <mat-tab label="Wishlist">
-        <div *ngFor="let book of collection.wishlist">
+        <div *ngFor="let book of wishlist">
           <app-book-item [book]="book"></app-book-item>
         </div>
       </mat-tab>
       <mat-tab label="Returned">
-        <div *ngFor="let book of collection.returned">
+        <div *ngFor="let book of returned">
           <app-book-item [book]="book"></app-book-item>
         </div>
       </mat-tab>

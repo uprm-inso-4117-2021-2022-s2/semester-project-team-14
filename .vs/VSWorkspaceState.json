@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\LibraryManagement"
+    "\\LibraryManagement",
+    "\\LibraryManagement\\LibraryManagement",
+    "\\LibraryManagement\\LibraryManagement\\ClientApp"
   ],
   "SelectedNode": "\\LibraryManagement\\LibraryManagement.sln",
   "PreviewInSolutionExplorer": false

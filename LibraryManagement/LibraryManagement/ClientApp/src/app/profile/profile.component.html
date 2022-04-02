@@ -3,7 +3,9 @@
   <mat-card-title>Profile</mat-card-title>
   <mat-card-content>
     <mat-card-subtitle>{{currentUser.name}}</mat-card-subtitle>
+    <div *ngIf="userLoaded">
+      <app-book-collection [collectionId]="currentUser.book_collection_id"></app-book-collection>
+    </div>
 
-    <app-book-collection [collection]="currentUser.bookCollection"></app-book-collection>
   </mat-card-content>
 </mat-card>

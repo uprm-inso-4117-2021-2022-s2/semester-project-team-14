@@ -1,9 +1,9 @@
-import { BookCollection } from "./bookCollection";
 
 export interface User {
-  id: string;
+  id: number;
   name: string;
   email: string;
-  bookCollection: BookCollection;
+  book_collection_id: number;
   accountType: string;
+  photoURL: string;
 }
