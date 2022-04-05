@@ -6,7 +6,8 @@ export interface BookCopy {
   author: string;
   isbn: string;
   status: string;
-  history: InterlibraryLoan[];
+  history: number;      //CHANGED FOR TESTING - DIEGO
+  // history: InterlibraryLoan[];
   rating: string;
   category: string;
 }

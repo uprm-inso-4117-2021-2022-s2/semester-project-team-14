@@ -19,6 +19,9 @@ import { SearchComponent } from './search/search.component';
 import { AboutComponent } from './about/about.component';
 import { BookCollectionComponent } from './profile/book-collection/book-collection.component';
 import { BookItemComponent } from './profile/book-collection/book-item/book-item.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { BookItemComponent } from './profile/book-collection/book-item/book-item
     MatGridListModule,
     MatTableModule,
     MatTabsModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'profile', component: ProfileComponent },
