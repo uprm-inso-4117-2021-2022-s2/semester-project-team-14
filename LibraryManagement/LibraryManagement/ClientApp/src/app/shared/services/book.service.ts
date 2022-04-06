@@ -18,4 +18,10 @@ export class BookService {
       return result;
     }).catch(error => { throw error });
   }
+
+  async getBooks() {
+    return await this.http.get<BookCopy[]>(this.rootURL + '/book_copy').toPromise().then((result) => {
+      return result;
+    }).catch(error => { throw error });
+  }
 }

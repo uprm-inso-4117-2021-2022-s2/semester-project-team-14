@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { BookCollection } from '../interfaces/bookCollection';
 import { BookCopy } from '../interfaces/bookCopy';
 import { InterlibraryLoan } from '../interfaces/interlibraryLoan';
 import { User } from '../interfaces/user';
-import { AuthenticationService } from '../shared/services/authentication.service';
+import { BookService } from '../shared/services/book.service';
 import { BookCollectionService } from '../shared/services/book-collection.service';
 
 
@@ -23,7 +23,11 @@ export class SearchComponent implements OnInit {
   @ViewChild('paginator') paginator! : MatPaginator;
   @ViewChild(MatSort) matSort! : MatSort;
   
-  // bookLoaded: boolean = false;
+  bookLoaded: boolean = false;
+  defaultPageSize = 5
+  allBooks: BookCopy[] = []
+  totalBooksFound: number = 0;
+
 
   //TEMP:
   currentBooks: BookCopy[] = [{
@@ -67,29 +71,47 @@ export class SearchComponent implements OnInit {
 
 
   constructor(
-    private authService: AuthenticationService
+    private bookService: BookService
   ) { }
 
   ngOnInit() {
-    this.dataSource =  new MatTableDataSource(this.currentBooks);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.matSort;
-
-    // this.loadBooks();
-
+    this.loadBooks();
   }
 
-  // loadBooks() {
-  //   this.authService.getBooks(1).then(currBook => {
-  //     if (currBook) {
-  //       this.currentBooks = currBook;
-  //       console.log(this.currentBooks);
-  //       this.bookLoaded = true;
-  //     }
-  //   });
+  reloadData() {
+    this.totalBooksFound = this.dataSource.filteredData.length;
+    this.currentBooks = this.dataSource.filteredData.slice(Math.max(Math.min(0, this.dataSource.filteredData.length), 0), Math.min(this.defaultPageSize, this.dataSource.filteredData.length));
+  }
 
+  loadBooks() {
+    this.bookService.getBooks().then(currBooks => {
+      if (currBooks) {
+        this.allBooks = currBooks;
+        this.totalBooksFound = currBooks.length;
+        this.bookLoaded = true;
+
+        this.dataSource = new MatTableDataSource(this.allBooks);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.matSort;
+
+        this.reloadData();
+      }
+    });
+  }
 
   filterData($event : any) {
     this.dataSource.filter = $event.target.value;
+    this.reloadData();
   }
+
+  handlePaginator($event: PageEvent): void {
+
+
+    const lowConstraint = Math.max(Math.min(($event.pageIndex * $event.pageSize), this.dataSource.filteredData.length - 1), 0); 
+    const upperConstraint = Math.min(($event.pageIndex * $event.pageSize) + $event.pageSize, this.dataSource.filteredData.length); 
+
+    console.log(lowConstraint);
+    console.log(upperConstraint);
+    this.currentBooks = this.dataSource.filteredData.slice(lowConstraint, upperConstraint);
+}
 }

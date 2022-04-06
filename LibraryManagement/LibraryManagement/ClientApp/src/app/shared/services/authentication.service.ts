@@ -20,11 +20,5 @@ export class AuthenticationService {
     }).catch(error => { throw error });
   }
 
-  async getBooks(bookId: number) {
-    return await this.http.get<BookCopy>(this.rootURL + '/book/' + bookId.toString()).toPromise().then((result) => {
-      return result;
-    }).catch(error => { throw error });
-  }
-
 
 }

@@ -50,6 +50,15 @@ app.get(`${rootUrl}/book_copy/:id`, (req, res) => {
     })
 });
 
+app.get(`${rootUrl}/book_copy`, (req, res) => {
+    (async () => {
+        const { rows } = await pool.query('SELECT * FROM librarycomponents."book_copy"')
+        res.json(rows);
+    })().catch(err => {
+        res.json(err.stack)
+    })
+});
+
 app.get(`${rootUrl}/interlibraryloan/:id`, (req, res) => {
     (async () => {
         const { rows } = await pool.query('SELECT * FROM librarycomponents."interlibraryloan" WHERE id =' + req.params.id)
