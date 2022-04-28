@@ -1,0 +1,66 @@
+<head>
+    
+    <title>
+        User Settings
+    </title>
+</head>
+<body>
+
+    <style>
+        input[type = text] :focus{
+            width: 100%;
+            margin: 30px;
+            /* border: 3px solid #555; */
+               
+        }
+        input[type = password]{
+            width: 100%;
+            margin: 0;
+            
+        }
+        #header{
+            text-align:center;
+        }
+        
+
+    </style>
+    <h1 id="header" style="font-size:50px" style="font-family:Verdana;">
+        Settings
+    </h1>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    Change username :
+                </td>
+                <td id="chguser">
+                    <input type="text" placeholder = "New Username" 
+                    username="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Change Password :
+                </td>
+                <td id=" chgpass">
+                    <input type ="password" placeholder="New Password" 
+                    password="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Change email :
+                </td>
+                <td id="chgemail">
+                    <input type="email" placeholder="New Email"
+                    email="">
+                </td>
+            </tr>
+            <tr>
+                <td id="button">
+                    <input type = "Submit" value="Submit" name="">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>

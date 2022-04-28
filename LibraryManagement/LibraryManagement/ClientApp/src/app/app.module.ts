@@ -23,6 +23,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { UsrsettingsComponent } from './profile/usrsettings/usrsettings.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatInputModule } from '@angular/material/input';
     SearchComponent,
     AboutComponent,
     BookCollectionComponent,
-    BookItemComponent
+    BookItemComponent,
+    UsrsettingsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -56,7 +58,8 @@ import { MatInputModule } from '@angular/material/input';
       { path: 'search', component: SearchComponent },
       { path: 'map', component: MapComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'help', component: HelpComponent }
+      { path: 'help', component: HelpComponent },
+      { path: 'usrsettings', component: UsrsettingsComponent}
     ])
   ],
   providers: [],

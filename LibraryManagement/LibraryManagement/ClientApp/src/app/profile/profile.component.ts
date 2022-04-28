@@ -4,6 +4,7 @@ import { InterlibraryLoan } from '../interfaces/interlibraryLoan';
 import { User } from '../interfaces/user';
 import { AuthenticationService } from '../shared/services/authentication.service';
 import { BookCollectionService } from '../shared/services/book-collection.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -27,8 +28,12 @@ export class ProfileComponent implements OnInit {
   userLoaded: boolean = false;
 
   constructor(
-    private authService: AuthenticationService
-  ) { }
+    private authService: AuthenticationService, private router:Router
+  ){ }
+
+  goToPage(pageName:string):void{
+    this.router.navigate([`${pageName}`]);
+  }
 
   ngOnInit() {
     //TODO: get user info from service when we have the database
