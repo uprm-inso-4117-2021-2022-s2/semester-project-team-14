@@ -8,7 +8,7 @@ const { Pool } = require('pg');
 const pool = new Pool({
     user: "veronica07",
     host: "170.187.136.33",
-    database: "LibraryManagment",
+    database: "LibraryManagement",
     password: "Team07Mem3",
     port: 5432
 });
